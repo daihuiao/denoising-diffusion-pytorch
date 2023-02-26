@@ -148,6 +148,7 @@ def test(epoch):
     global best_acc
     correct = 0
     total = 0
+    model.eval()
     with torch.no_grad():
         for batch_idx, (inputs, targets) in tqdm(enumerate(testloader)):
             condition, targets = inputs.to(device), targets.to(device)
